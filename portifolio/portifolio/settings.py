@@ -34,17 +34,18 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = ['portfolio-tblq.onrender.com']
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+MAILERS = {
+    "default": {
+        "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+        "HOST": "smtp.gmail.com",
+        "PORT": 587,
+        "USERNAME": "midhunchackoxyz@gmail.com",
+        "PASSWORD": "ofph soeg omgh whst",
+        "USE_TLS": True,
+    }
+}
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
+DEFAULT_FROM_EMAIL = "midhunchackoxyz@gmail.com"
 
 # Application definition
 
