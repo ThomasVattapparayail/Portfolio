@@ -23,15 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@)w&y$k&zsgxhs2y+op92f!9z$k)qzw1v0n$82ox1(qk=6pb&r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+import os
+
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-
-#import os
-
-#DEBUG = os.environ.get("DEBUG", "False") == "True"
-
-ALLOWED_HOSTS = ['portfolio-tblq.onrender.com']
+ALLOWED_HOSTS = ["portfolio-tblq.onrender.com"]
 
 
 MAILERS = {
@@ -39,13 +35,16 @@ MAILERS = {
         "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
         "HOST": "smtp.gmail.com",
         "PORT": 587,
-        "USERNAME": "midhunchackoxyz@gmail.com",
-        "PASSWORD": "ofph soeg omgh whst",
+        "USERNAME": os.environ.get("EMAIL_HOST_USER"),
+        "PASSWORD": os.environ.get("EMAIL_HOST_PASSWORD"),
         "USE_TLS": True,
     }
 }
 
-DEFAULT_FROM_EMAIL = "midhunchackoxyz@gmail.com"
+DEFAULT_FROM_EMAIL = os.environ.get(
+    "EMAIL_HOST_USER",
+    "midhunchackoxyz@gmail.com"
+)
 
 # Application definition
 
