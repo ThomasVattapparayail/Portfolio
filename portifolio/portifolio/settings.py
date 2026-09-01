@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@)w&y$k&zsgxhs2y+op92f!9z$k)qzw1v0n$82ox1(qk=6pb&r
 # SECURITY WARNING: don't run with debug turned on in production!
 import os
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["portfolio-tblq.onrender.com"]
 
