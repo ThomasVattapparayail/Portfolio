@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.conf import settings
 
 # Create your views here.
 def index(request):
@@ -21,7 +22,7 @@ def contact(request):
 You received a new message from your portfolio.
 
 Name: {name}
-Email: {email}
+Visitor Email: {email}
 Subject: {subject}
 
 Message:
@@ -31,12 +32,16 @@ Message:
         send_mail(
             email_subject,
             email_message,
-            email,
-            ['midhunchackoxyz@gmail.com'],
+            settings.DEFAULT_FROM_EMAIL,       
+            ["midhunchackoxyz@gmail.com"],
             fail_silently=False,
         )
 
-        messages.success(request, "Your message has been sent successfully!")
-        return redirect("index")   
+        messages.success(
+            request,
+            "Your message has been sent successfully!"
+        )
 
+        return redirect("index")
     return redirect("index")
+
