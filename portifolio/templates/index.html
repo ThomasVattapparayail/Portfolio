@@ -372,7 +372,8 @@
         </div>
 
         <div class="reveal d2">
-          <form action="#" method="POST" novalidate>
+          <form action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
             <div class="flex flex-col gap-4">
               <div class="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -408,5 +409,13 @@
   </div>
 </section>
 </main>
+<script>
+    setTimeout(function () {
+        const alert = document.querySelector('.alert');
+        if (alert) {
+            alert.remove();
+        }
+    }, 3000);
+</script>
 
 {% endblock %}

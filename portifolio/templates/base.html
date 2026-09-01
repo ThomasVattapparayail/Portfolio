@@ -36,6 +36,14 @@ tailwind.config = {
 <body>
     <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
     :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    {% endfor %}
+    {% endif %}
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
 
         <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
