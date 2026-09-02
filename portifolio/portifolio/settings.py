@@ -25,14 +25,13 @@ SECRET_KEY = 'django-insecure-@)w&y$k&zsgxhs2y+op92f!9z$k)qzw1v0n$82ox1(qk=6pb&r
 # SECURITY WARNING: don't run with debug turned on in production!
 import os
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["portfolio-tblq.onrender.com"]
 
 
 MAILERS = {
     "default": {
-        #"BACKEND": "django.core.mail.backends.smtp.EmailBackend",
         "BACKEND": "portfolio.backends.email_backend.EmailBackend",
         "OPTIONS": {
             "host": "smtp.gmail.com",
@@ -45,10 +44,7 @@ MAILERS = {
     }
 }
 
-DEFAULT_FROM_EMAIL = os.environ.get(
-    "EMAIL_HOST_USER",
-    "midhunchackoxyz@gmail.com"
-)
+DEFAULT_FROM_EMAIL = os.environ.get("midhunchackoxyz@gmail.com")
 
 # Application definition
 
