@@ -19,21 +19,21 @@ def contact(request):
         email_subject = f"Portfolio Contact: {subject}"
 
         email_message = f"""
-You received a new message from your portfolio.
+                            You received a new message from your portfolio.
 
-Name: {name}
-Visitor Email: {email}
-Subject: {subject}
+                            Name: {name}
+                            Visitor Email: {email}
+                            Subject: {subject}
 
-Message:
-{message}
-"""
+                            Message:
+                            {message}
+                            """
 
         send_mail(
             email_subject,
             email_message,
             settings.DEFAULT_FROM_EMAIL,       
-            ["midhunchackoxyz@gmail.com"],
+            email,
             fail_silently=False,
         )
 
