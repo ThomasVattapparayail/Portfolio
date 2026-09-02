@@ -35,10 +35,10 @@ MAILERS = {
         "BACKEND": "portfolio.backends.email_backend.EmailBackend",
         "OPTIONS": {
             "host": "smtp.gmail.com",
-            "port": 587,
+            "port": 465,
             "username": os.environ.get("EMAIL_HOST_USER"),
             "password": os.environ.get("EMAIL_HOST_PASSWORD"),
-            "use_tls": True,
+            "use_ssl": True,
             "timeout": 20,
         },
     }
