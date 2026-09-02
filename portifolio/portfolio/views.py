@@ -31,9 +31,9 @@ def contact(request):
 
         send_mail(
             email_subject,
-            email_message,
-            [settings.DEFAULT_FROM_EMAIL],       
+            email_message,       
             email,
+            [settings.DEFAULT_FROM_EMAIL],
             fail_silently=False,
         )
 
