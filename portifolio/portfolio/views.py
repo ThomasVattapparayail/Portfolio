@@ -32,7 +32,7 @@ def contact(request):
         send_mail(
             email_subject,
             email_message,       
-            email,
+            "midhunchackoxyz@gmail.com",
             ["midhunchackoxyz@gmail.com"],
             fail_silently=False,
         )
