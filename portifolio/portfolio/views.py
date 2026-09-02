@@ -32,8 +32,8 @@ def contact(request):
         send_mail(
             email_subject,
             email_message,       
-            "midhunchackoxyz@gmail.com",
-            [email],
+            email,
+            ["midhunchackoxyz@gmail.com"],
             fail_silently=False,
         )
 

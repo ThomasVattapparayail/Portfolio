@@ -44,8 +44,6 @@ MAILERS = {
     }
 }
 
-DEFAULT_FROM_EMAIL = os.environ.get("midhunchackoxyz@gmail.com")
-
 # Application definition
 
 INSTALLED_APPS = [
