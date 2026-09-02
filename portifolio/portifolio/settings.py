@@ -32,7 +32,8 @@ ALLOWED_HOSTS = ["portfolio-tblq.onrender.com"]
 
 MAILERS = {
     "default": {
-        "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+        #"BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+        "BACKEND": "main.backends.email_backend.EmailBackend",
         "OPTIONS": {
             "host": "smtp.gmail.com",
             "port": 465,
