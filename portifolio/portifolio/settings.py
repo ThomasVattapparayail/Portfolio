@@ -30,26 +30,26 @@ DEBUG = True
 ALLOWED_HOSTS = ["portfolio-tblq.onrender.com"]
 
 
-# MAILERS = {
-#     "default": {
-#         "BACKEND": "portfolio.backends.email_backend.EmailBackend",
-#         "OPTIONS": {
-#             "host": "smtp.gmail.com",
-#             "port": 465,
-#             "username": os.environ.get("EMAIL_HOST_USER"),
-#             "password": os.environ.get("EMAIL_HOST_PASSWORD"),
-#             "use_ssl": True,
-#             "timeout": 20,
-#         },
-#     }
-# }
+MAILERS = {
+    "default": {
+        "BACKEND": "portfolio.backends.email_backend.EmailBackend",
+        "OPTIONS": {
+            "host": "smtp.gmail.com",
+            "port": 587,
+            "username": 'midhunchackoxyz@gmail.com',
+            "password": 'ofph soeg omgh whst',
+            "use_tls": True,
+            "timeout": 20,
+        },
+    }
+}
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'midhunchackoxyz@gmail.com'
-EMAIL_HOST_PASSWORD = 'ofph soeg omgh whst'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'portfolio.backends.email_backend.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'midhunchackoxyz@gmail.com'
+# EMAIL_HOST_PASSWORD = 'ofph soeg omgh whst'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_BACKEND = 'portfolio.backends.email_backend.EmailBackend'
 
 # Application definition
 
