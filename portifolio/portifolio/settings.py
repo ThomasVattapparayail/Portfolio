@@ -36,8 +36,8 @@ MAILERS = {
         "OPTIONS": {
             "host": "smtp.gmail.com",
             "port": 587,
-            "username": 'midhunchackoxyz@gmail.com',
-            "password": 'ofph soeg omgh whst',
+            "username": os.environ.get("EMAIL_HOST_USER"),
+            "password": os.environ.get("EMAIL_HOST_PASSWORD"),
             "use_tls": True,
             "timeout": 20,
         },
